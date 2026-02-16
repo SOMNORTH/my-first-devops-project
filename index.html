@@ -2,9 +2,10 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<title>Dragon CSS</title>
+<title>Animated Dragon</title>
 <style>
 body {
+    margin: 0;
     background: linear-gradient(#1e3c72, #2a5298);
     display: flex;
     justify-content: center;
@@ -15,8 +16,9 @@ body {
 /* ตัวมังกร */
 .dragon {
     position: relative;
-    width: 300px;
-    height: 200px;
+    width: 320px;
+    height: 220px;
+    animation: float 3s ease-in-out infinite;
 }
 
 /* ลำตัว */
@@ -26,8 +28,8 @@ body {
     background: green;
     border-radius: 100px;
     position: absolute;
-    top: 60px;
-    left: 50px;
+    top: 80px;
+    left: 80px;
 }
 
 /* หัว */
@@ -37,8 +39,8 @@ body {
     background: green;
     border-radius: 50%;
     position: absolute;
-    top: 20px;
-    left: 0;
+    top: 40px;
+    left: 20px;
 }
 
 /* ตา */
@@ -49,7 +51,7 @@ body {
     border-radius: 50%;
     position: absolute;
     top: 30px;
-    left: 30px;
+    left: 35px;
 }
 
 .pupil {
@@ -64,13 +66,15 @@ body {
 
 /* ปีก */
 .wing {
-    width: 120px;
-    height: 100px;
+    width: 140px;
+    height: 120px;
     background: darkgreen;
     position: absolute;
-    top: 0;
-    left: 120px;
+    top: 10px;
+    left: 130px;
     clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+    transform-origin: bottom center;
+    animation: flap 1s ease-in-out infinite;
 }
 
 /* หาง */
@@ -79,27 +83,49 @@ body {
     height: 20px;
     background: green;
     position: absolute;
-    top: 120px;
-    left: 200px;
+    top: 150px;
+    left: 220px;
     border-radius: 20px;
+    animation: wag 2s ease-in-out infinite;
 }
 
 /* ไฟพ่น */
 .fire {
-    width: 60px;
-    height: 30px;
+    width: 70px;
+    height: 35px;
     background: orange;
     position: absolute;
-    top: 60px;
-    left: -60px;
+    top: 90px;
+    left: -40px;
     border-radius: 50%;
-    animation: flame 0.5s infinite alternate;
+    animation: flame 0.4s infinite alternate;
+}
+
+/* แอนิเมชัน */
+
+@keyframes flap {
+    0%   { transform: rotate(0deg); }
+    50%  { transform: rotate(-20deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes wag {
+    0%   { transform: rotate(0deg); }
+    50%  { transform: rotate(15deg); }
+    100% { transform: rotate(0deg); }
 }
 
 @keyframes flame {
     from { background: orange; transform: scaleX(1); }
-    to { background: red; transform: scaleX(1.2); }
+    to   { background: red; transform: scaleX(1.3); }
 }
+
+@keyframes float {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
 </style>
 </head>
 <body>
@@ -118,4 +144,3 @@ body {
 
 </body>
 </html>
-
