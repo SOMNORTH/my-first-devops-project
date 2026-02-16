@@ -1,84 +1,121 @@
-<html>
-  <h1>ยินดีต้อนรับสู่โลกของ DevOps</h1>
-<p>โปรเจกต์นี้กำลังรันด้วยระบบ CI/CD อัตโนมัติ</p>
-<p>ไม่เชื่อคั้บโม้</p>
-
+<!DOCTYPE html>
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<title>ดอกไม้ด้วย HTML CSS</title>
+<title>Dragon CSS</title>
 <style>
-    body {
-        background-color: #f0f8ff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
+body {
+    background: linear-gradient(#1e3c72, #2a5298);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
-    .flower {
-        position: relative;
-        width: 200px;
-        height: 200px;
-    }
+/* ตัวมังกร */
+.dragon {
+    position: relative;
+    width: 300px;
+    height: 200px;
+}
 
-    .petal {
-        width: 100px;
-        height: 100px;
-        background-color: pink;
-        border-radius: 50%;
-        position: absolute;
-        top: 50px;
-        left: 50px;
-        transform-origin: center;
-    }
+/* ลำตัว */
+.body {
+    width: 200px;
+    height: 120px;
+    background: green;
+    border-radius: 100px;
+    position: absolute;
+    top: 60px;
+    left: 50px;
+}
 
-    /* กลีบดอก 8 กลีบ */
-    .petal:nth-child(1) { transform: rotate(0deg) translate(60px); }
-    .petal:nth-child(2) { transform: rotate(45deg) translate(60px); }
-    .petal:nth-child(3) { transform: rotate(90deg) translate(60px); }
-    .petal:nth-child(4) { transform: rotate(135deg) translate(60px); }
-    .petal:nth-child(5) { transform: rotate(180deg) translate(60px); }
-    .petal:nth-child(6) { transform: rotate(225deg) translate(60px); }
-    .petal:nth-child(7) { transform: rotate(270deg) translate(60px); }
-    .petal:nth-child(8) { transform: rotate(315deg) translate(60px); }
+/* หัว */
+.head {
+    width: 100px;
+    height: 100px;
+    background: green;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    left: 0;
+}
 
-    .center {
-        width: 80px;
-        height: 80px;
-        background-color: yellow;
-        border-radius: 50%;
-        position: absolute;
-        top: 60px;
-        left: 60px;
-        z-index: 1;
-    }
+/* ตา */
+.eye {
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
 
-    .stem {
-        width: 10px;
-        height: 150px;
-        background-color: green;
-        position: absolute;
-        top: 200px;
-        left: 95px;
-    }
+.pupil {
+    width: 10px;
+    height: 10px;
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+/* ปีก */
+.wing {
+    width: 120px;
+    height: 100px;
+    background: darkgreen;
+    position: absolute;
+    top: 0;
+    left: 120px;
+    clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+}
+
+/* หาง */
+.tail {
+    width: 150px;
+    height: 20px;
+    background: green;
+    position: absolute;
+    top: 120px;
+    left: 200px;
+    border-radius: 20px;
+}
+
+/* ไฟพ่น */
+.fire {
+    width: 60px;
+    height: 30px;
+    background: orange;
+    position: absolute;
+    top: 60px;
+    left: -60px;
+    border-radius: 50%;
+    animation: flame 0.5s infinite alternate;
+}
+
+@keyframes flame {
+    from { background: orange; transform: scaleX(1); }
+    to { background: red; transform: scaleX(1.2); }
+}
 </style>
 </head>
 <body>
 
-<div class="flower">
-    <div class="petal"></div>
-    <div class="petal"></div>
-    <div class="petal"></div>
-    <div class="petal"></div>
-    <div class="petal"></div>
-    <div class="petal"></div>
-    <div class="petal"></div>
-    <div class="petal"></div>
-    <div class="center"></div>
-    <div class="stem"></div>
+<div class="dragon">
+    <div class="fire"></div>
+    <div class="head">
+        <div class="eye">
+            <div class="pupil"></div>
+        </div>
+    </div>
+    <div class="wing"></div>
+    <div class="body"></div>
+    <div class="tail"></div>
 </div>
 
 </body>
-
 </html>
+
